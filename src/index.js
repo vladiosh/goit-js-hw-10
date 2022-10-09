@@ -12,6 +12,8 @@ const refs = {
 const DEBOUNCE_DELAY = 300;
 refs.inputRef.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
+let inputValue = '';
+
 function renderPrewiewMarkup(data) {
   const markup = data.map(createPrewiewMarkup).join('');
   refs.countryListRef.innerHTML = markup;
@@ -25,9 +27,8 @@ function renderCountryInfoMarkup(data) {
 function onSearch(evt) {
   clearCountryList();
   clearCountryInfo();
-
-  const inputValue = evt.target.value.trim();
-  console.log(evt.data);
+  inputValue = evt.target.value.trim().toLowerCase();
+  // console.log(inputValue);
 
   if (!inputValue) {
     return;

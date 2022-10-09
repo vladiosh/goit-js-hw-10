@@ -32,3 +32,15 @@ body {
 .country-list__name {
   margin-left: 10px;
 }
+
+.country-list__name {
+  font-weight: 700;
+}
+
+.description__name {
+  font-weight: 700;
+}
+
+.description__second-name {
+  font-weight: 400;
+}
